@@ -1,0 +1,32 @@
+.alert-wrap {
+  position: fixed; top: 70px; right: 20px; z-index: 999; min-width: 320px;
+  &.warn .alert-card  { border-color: #fde68a; background: #fffbeb; }
+  &.ban .alert-card   { border-color: #fca5a5; background: #fff5f5; }
+}
+.alert-card {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px; box-shadow: var(--shadow-md);
+}
+.alert-icon {
+  width: 30px; height: 30px; background: #fef3c7; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  svg { color: var(--warn); }
+}
+.alert-body {
+  flex: 1;
+  h4 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  p  { font-size: 12px; color: var(--text-muted); }
+  .labels {
+    display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;
+    span {
+      background: #f1f5f9; color: var(--text-muted);
+      padding: 1px 6px; border-radius: 4px; font-size: 11px;
+    }
+  }
+}
+.dismiss-btn {
+  background: none; border: none; cursor: pointer; padding: 2px;
+  color: var(--text-muted); display: flex; align-items: center;
+  &:hover { color: var(--text); }
+}

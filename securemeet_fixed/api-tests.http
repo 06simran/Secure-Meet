@@ -1,0 +1,83 @@
+### SecureMeet API Tests
+### Install "REST Client" VS Code extension to run these
+
+@baseUrl = http://localhost:5000/api
+@token = PASTE_YOUR_TOKEN_HERE
+
+### Health Check
+GET {{baseUrl}}/health
+
+###
+
+### Register User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "password123",
+  "role": "admin"
+}
+
+###
+
+### Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###
+
+### Get Current User
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{token}}
+
+###
+
+### Create Meeting
+POST {{baseUrl}}/meetings/create
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Team Standup"
+}
+
+###
+
+### Test Toxic Message
+POST {{baseUrl}}/moderation/predict
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "message": "I hate you, you stupid idiot"
+}
+
+###
+
+### Test Safe Message
+POST {{baseUrl}}/moderation/predict
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "message": "Great meeting today everyone!"
+}
+
+###
+
+### Get Stats
+GET {{baseUrl}}/moderation/stats
+Authorization: Bearer {{token}}
+
+###
+
+### Get Flagged Messages
+GET {{baseUrl}}/moderation/flagged
+Authorization: Bearer {{token}}

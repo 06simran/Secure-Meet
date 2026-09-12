@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build:prod",
+  "outputDirectory": "dist/securemeet-frontend/browser",
+  "framework": "angular",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}

@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────────────────────────
+#  docker-compose.azure.yml
+#  Use when connecting to Azure MySQL (skips local mysql container)
+#
+#  Usage:
+#    docker compose -f docker-compose.yml -f docker-compose.azure.yml up --build
+#
+#  Set these in your terminal first:
+#    export AZURE_MYSQL_HOST=your-server.mysql.database.azure.com
+#    export AZURE_MYSQL_USER=your_admin
+#    export AZURE_MYSQL_PASSWORD=YourPassword123!
+# ─────────────────────────────────────────────────────────────────
+
+services:
+
+  # Disable local MySQL — using Azure instead
+  mysql:
+    profiles: ["disabled"]
+
+  backend:
+    environment:
+      MYSQL_HOST: ${AZURE_MYSQL_HOST}
+      MYSQL_PORT: 3306
+      MYSQL_USER: ${AZURE_MYSQL_USER}
+      MYSQL_PASSWORD: ${AZURE_MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${AZURE_MYSQL_DATABASE:-securemeet}
+      USE_SSL: 1
+      FLASK_ENV: production
+      FLASK_DEBUG: 0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-this-in-production}
+    depends_on: []
