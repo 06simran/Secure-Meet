@@ -1,0 +1,60 @@
+.home-page { min-height: 100vh; display: flex; flex-direction: column; }
+
+.home-nav {
+  background: #fff; border-bottom: 1px solid var(--border);
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    height: 60px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 16px; font-weight: 700; color: var(--primary);
+  }
+  .nav-actions { display: flex; align-items: center; gap: 10px; }
+}
+
+.hero {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 80px 24px; background: linear-gradient(135deg, #f0f4ff 0%, #f8fafc 60%);
+  text-align: center;
+  .hero-content { max-width: 640px; }
+  .hero-tag {
+    display: inline-block; background: var(--primary-lt); color: var(--primary);
+    font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 999px;
+    letter-spacing: .5px; text-transform: uppercase; margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 48px; font-weight: 800; line-height: 1.1;
+    color: var(--text); margin-bottom: 20px; letter-spacing: -1px;
+  }
+  p { font-size: 17px; color: var(--text-muted); line-height: 1.7; margin-bottom: 36px; }
+  .hero-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+}
+
+.btn-lg { padding: 12px 28px; font-size: 15px; }
+
+.features {
+  padding: 80px 24px;
+  .features-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+  }
+}
+
+.feature-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 12px;
+  padding: 28px; transition: box-shadow .2s;
+  &:hover { box-shadow: var(--shadow-md); }
+  .feature-icon {
+    width: 44px; height: 44px; background: var(--primary-lt); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    svg { color: var(--primary); }
+  }
+  h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  p  { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+}
+
+.home-footer {
+  padding: 24px; text-align: center; border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text-muted);
+}

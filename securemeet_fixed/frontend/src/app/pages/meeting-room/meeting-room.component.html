@@ -1,0 +1,62 @@
+<div class="room-page" *ngIf="!loading; else spin">
+  <app-moderation-alert *ngIf="alert" [result]="alert" (dismissed)="dismissAlert()"></app-moderation-alert>
+
+  <div class="room-layout">
+    <aside class="sidebar">
+      <div class="meeting-meta">
+        <div class="meeting-title">{{ meeting?.title || 'Meeting' }}</div>
+        <div class="code-row">
+          <span class="code-label">Code</span>
+          <span class="code-val">{{ meeting?.code }}</span>
+        </div>
+        <div class="mod-status">
+          <span class="status-dot"></span>
+          AI Moderation Active
+        </div>
+      </div>
+
+      <div class="participants-section">
+        <div class="section-label">Participants ({{ participants.length }})</div>
+        <div class="participant-row" *ngFor="let p of participants">
+          <div class="avatar">{{ p.name[0].toUpperCase() }}</div>
+          <span class="p-name">{{ p.name }}</span>
+          <span class="online-dot" [class.online]="p.online"></span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="chat-area">
+      <div class="messages" #scrollMe>
+        <div class="msg" *ngFor="let m of messages" [class.flagged]="m.mod?.toxic">
+          <div class="msg-header">
+            <span class="msg-user">{{ m.user }}</span>
+            <span class="msg-time">{{ m.time | date:'HH:mm' }}</span>
+            <span class="mod-badge" *ngIf="m.mod?.toxic">{{ m.mod?.action | uppercase }}</span>
+          </div>
+          <div class="msg-body">{{ m.text }}</div>
+        </div>
+        <div class="no-msgs" *ngIf="!messages.length">
+          No messages yet. Start the conversation.
+        </div>
+      </div>
+
+      <div class="input-row">
+        <textarea
+          [(ngModel)]="newMessage"
+          (keydown)="onKey($event)"
+          placeholder="Type a message and press Enter to send"
+          rows="1">
+        </textarea>
+        <button class="send-btn" (click)="send()" [disabled]="!newMessage.trim()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<ng-template #spin>
+  <div class="spin-page">Loading meeting...</div>
+</ng-template>

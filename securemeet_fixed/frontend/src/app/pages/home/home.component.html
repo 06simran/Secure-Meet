@@ -1,0 +1,92 @@
+<div class="home-page">
+  <nav class="home-nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        SecureMeet
+      </div>
+      <div class="nav-actions">
+        <a routerLink="/login" class="btn-outline">Sign in</a>
+        <a routerLink="/register" class="btn-primary">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Secure. Private. Self-hosted.</div>
+      <h1>Video conferencing<br>you control</h1>
+      <p>SecureMeet is a self-hosted video conferencing platform with AI-powered content moderation, role-based access control, and enterprise-grade security — all running in your own Docker environment.</p>
+      <div class="hero-btns">
+        <a routerLink="/register" class="btn-primary btn-lg">Create Free Account</a>
+        <a routerLink="/login" class="btn-outline btn-lg">Sign In</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>JWT Authentication</h3>
+        <p>Stateless token-based auth with bcrypt password hashing and role-based route protection.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
+          </svg>
+        </div>
+        <h3>Real-time Video</h3>
+        <p>Peer-to-peer WebRTC audio and video with no third-party media server required.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>AI Moderation</h3>
+        <p>Automatic detection and flagging of harmful content in meeting chats using ML classification.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/>
+          </svg>
+        </div>
+        <h3>Admin Panel</h3>
+        <p>Full control over users and meetings — manage roles, view flags, and moderate content.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
+            <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+        </div>
+        <h3>Docker Ready</h3>
+        <p>Full three-tier Docker Compose setup. One command to deploy frontend, backend, and database.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Live Dashboard</h3>
+        <p>Real-time overview of meetings, flagged messages, and user activity in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="home-footer">
+    <p>SecureMeet &copy; 2025 &mdash; Built with Angular, Flask, MySQL &amp; Docker</p>
+  </footer>
+</div>

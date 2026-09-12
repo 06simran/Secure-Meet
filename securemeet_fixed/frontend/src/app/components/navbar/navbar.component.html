@@ -1,0 +1,18 @@
+<nav class="navbar">
+  <div class="nav-inner">
+    <a routerLink="/dashboard" class="nav-brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      SecureMeet
+    </a>
+    <div class="nav-links" *ngIf="auth.isLoggedIn">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/admin" routerLinkActive="active" *ngIf="auth.isAdmin">Admin</a>
+    </div>
+    <div class="nav-right" *ngIf="auth.isLoggedIn">
+      <span class="nav-user">{{ auth.currentUser?.username }}</span>
+      <button class="btn-outline btn-sm" (click)="auth.logout()">Sign out</button>
+    </div>
+  </div>
+</nav>

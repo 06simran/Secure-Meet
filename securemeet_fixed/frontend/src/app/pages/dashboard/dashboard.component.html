@@ -1,0 +1,131 @@
+<div class="dashboard">
+  <div class="container">
+
+    <div class="page-header">
+      <div>
+        <h1>Dashboard</h1>
+        <p class="page-sub">Welcome back, <strong>{{ auth.currentUser?.username }}</strong></p>
+      </div>
+      <div class="header-actions">
+        <button class="btn-outline" (click)="showJoin=!showJoin; showCreate=false">Join Meeting</button>
+        <button class="btn-primary" (click)="showCreate=!showCreate; showJoin=false">New Meeting</button>
+      </div>
+    </div>
+
+    <!-- Create panel -->
+    <div class="action-panel" *ngIf="showCreate">
+      <h3>Create New Meeting</h3>
+      <div class="panel-row">
+        <input [(ngModel)]="newTitle" placeholder="Meeting title" (keyup.enter)="createMeeting()"/>
+        <button class="btn-primary" (click)="createMeeting()">Create</button>
+      </div>
+      <p class="panel-err" *ngIf="createError">{{ createError }}</p>
+    </div>
+
+    <!-- Join panel -->
+    <div class="action-panel" *ngIf="showJoin">
+      <h3>Join Meeting</h3>
+      <div class="panel-row">
+        <input [(ngModel)]="joinCode" placeholder="Enter meeting code" style="text-transform:uppercase" (keyup.enter)="joinMeeting()"/>
+        <button class="btn-primary" (click)="joinMeeting()">Join</button>
+      </div>
+      <p class="panel-err" *ngIf="joinError">{{ joinError }}</p>
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-icon users">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-val">{{ stats.total_users || 0 }}</div>
+          <div class="stat-lbl">Total Users</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon meetings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-val">{{ stats.total_meetings || meetings.length }}</div>
+          <div class="stat-lbl">Meetings</div>
+        </div>
+      </div>
+      <div class="stat-card warn">
+        <div class="stat-icon flag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-val">{{ stats.total_flagged_messages || 0 }}</div>
+          <div class="stat-lbl">Flagged Messages</div>
+        </div>
+      </div>
+      <div class="stat-card danger">
+        <div class="stat-icon alert">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-val">{{ stats.flagged_users || 0 }}</div>
+          <div class="stat-lbl">Flagged Users</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two col -->
+    <div class="two-col">
+      <!-- My Meetings -->
+      <div class="card section-card">
+        <div class="section-head">
+          <h2>My Meetings</h2>
+          <button class="btn-outline btn-sm" (click)="loadAll()">Refresh</button>
+        </div>
+        <div class="empty-state" *ngIf="!meetings.length && !loading">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.5">
+            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
+          </svg>
+          <p>No meetings yet. Create one to get started.</p>
+        </div>
+        <div class="loading-state" *ngIf="loading">Loading meetings...</div>
+        <div class="meeting-row" *ngFor="let m of meetings" (click)="goToMeeting(m)">
+          <div class="meeting-info">
+            <div class="meeting-title">{{ m.title }}</div>
+            <div class="meeting-code">{{ m.code }}</div>
+          </div>
+          <span class="badge" [class]="m.status">{{ m.status }}</span>
+        </div>
+      </div>
+
+      <!-- Recent Flags -->
+      <div class="card section-card">
+        <div class="section-head">
+          <h2>Recent Flags</h2>
+          <a routerLink="/admin" *ngIf="auth.isAdmin" class="view-all">View all</a>
+        </div>
+        <div class="empty-state" *ngIf="!flagged.length && !loading">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <p>No flagged messages. All clear.</p>
+        </div>
+        <div class="flag-row" *ngFor="let msg of flagged">
+          <div class="flag-text">{{ (msg.message || '') | slice:0:70 }}{{ (msg.message||'').length > 70 ? '...' : '' }}</div>
+          <div class="flag-meta">
+            <span class="badge warning">{{ msg.action }}</span>
+            <span class="conf-txt">{{ (msg.confidence*100).toFixed(0) }}%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
