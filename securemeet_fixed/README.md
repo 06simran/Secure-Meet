@@ -1,299 +1,288 @@
-# 🛡️ SecureMeet — AI-Powered Meeting Moderation System
+<div align="center" style="border: 2px solid #ccc; padding: 20px; border-radius: 12px; width: 80%; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.15);">
 
-> Full-stack AI meeting moderation | Angular 17 + Flask + Azure MySQL + Docker
+<img
+ width="180"
+ height="220"
+ alt="Logo - SURE ProEd"
+ src="https://github.com/user-attachments/assets/88fa5098-24b1-4ece-87df-95eb920ea721"
+ style="border-radius: 10px;"
+/>
 
----
+<h1 align="center" style="font-family: Arial; font-weight: 600; margin-top: 15px;">
+SURE ProEd (formerly SURE Trust)
+</h1>
 
-## 🧰 Tech Stack
+<h2 style="color: #2b6cb0; font-family: Arial;">
+Skill Upgradation for Rural Youth Empowerment Trust
+</h2>
 
-| Layer      | Technology                                      |
-|------------|-------------------------------------------------|
-| Frontend   | Angular 17, RxJS, SCSS                          |
-| Backend    | Flask, Flask-JWT-Extended, Flask-CORS           |
-| Database   | Azure MySQL Flexible Server / Local MySQL 8     |
-| ML / NLP   | Scikit-learn, NLTK, TF-IDF + Logistic Regression|
-| Auth       | JWT (JSON Web Tokens)                           |
-| Container  | Docker, Docker Compose                          |
-| Deploy     | Azure Container Apps / Azure Web App            |
+</div>
 
----
+<hr style="border: 0; border-top: 1px solid #ccc; width: 80%;" />
 
-## 📁 Project Structure
+<div style="padding: 20px; border: 2px solid #ddd; border-radius: 12px; width: 90%; margin: auto; background: #fafafa; font-family: Arial;">
 
-```
-securemeet/
-├── backend/
-│   ├── app.py                    # Flask app factory
-│   ├── requirements.txt
-│   ├── Dockerfile
-│   ├── .env.example
-│   ├── routes/
-│   │   ├── auth_routes.py
-│   │   ├── meeting_routes.py
-│   │   └── moderation_routes.py
-│   ├── services/
-│   │   ├── db_service.py         # SQLAlchemy models (User, Meeting, FlaggedMessage)
-│   │   └── moderation_service.py # ML inference
-│   └── ml/
-│       └── train_model.py
-├── frontend/
-│   ├── Dockerfile
-│   ├── nginx.conf
-│   ├── angular.json
-│   ├── package.json
-│   └── src/app/
-│       ├── pages/                # home, login, register, dashboard, meeting-room, admin-panel
-│       ├── components/           # navbar, moderation-alert
-│       ├── services/             # auth, meeting, moderation
-│       └── guards/               # auth.guard, auth.interceptor
-├── .vscode/
-│   ├── settings.json
-│   ├── launch.json               # F5 debug configs
-│   ├── tasks.json                # Ctrl+Shift+B tasks
-│   └── extensions.json
-├── docker-compose.yml            # Local MySQL + backend + frontend
-├── docker-compose.azure.yml      # Azure MySQL override
-├── mysql-init/init.sql
-├── api-tests.http                # REST Client tests
-└── README.md
-```
+<h2 style="color:#333;">Student Details</h2>
 
----
+<div align="left" style="margin: 20px; font-size: 16px;">
 
-## 🚀 Option 1 — Run with Docker (Recommended)
+<p><strong>Name:</strong> Simran Kaur</p>
+<p><strong>Email ID:</strong> simrankaurpythong37@gmail.com</p>
+<p><strong>College Name:</strong> CGC Landran</p>
+<p><strong>Branch/Specialization:</strong> CSE</p>
+<p><strong>College ID:</strong> 2101868</p>
 
-### Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Mac/Windows/Linux)
-- On **Mac M1/M2/M3**: Docker Desktop with Rosetta enabled (Settings → General → Use Rosetta)
+</div>
 
-### Start with local MySQL (quickest)
+<hr style="border: 0; border-top: 1px solid #ccc; width: 80%;" />
 
-```bash
-# 1. Clone / unzip project
-cd securemeet
+<h2 style="color:#333;">Course Details</h2>
 
-# 2. Copy env file
-cp backend/.env.example backend/.env
+<div align="left" style="margin: 20px; font-size: 16px;">
 
-# 3. Build and start everything
-docker compose up --build
+<p><strong>Course Opted:</strong> AI & ML</p>
+<p><strong>Instructor Name:</strong> Gaurav Patel</p>
+<p><strong>Duration:</strong> 6 months</p>
 
-# Services will be available at:
-# Frontend  → http://localhost:4200
-# Backend   → http://localhost:5000
-# MySQL     → localhost:3306
-```
+</div>
 
-### Start with Azure MySQL
+<hr style="border: 0; border-top: 1px solid #ccc; width: 80%;" />
 
-```bash
-# Set your Azure credentials in terminal
-export AZURE_MYSQL_HOST=your-server.mysql.database.azure.com
-export AZURE_MYSQL_USER=your_admin
-export AZURE_MYSQL_PASSWORD=YourPassword123!
-export AZURE_MYSQL_DATABASE=securemeet
+<h2 style="color:#333;">Trainer Details</h2>
 
-# Run with Azure override
-docker compose -f docker-compose.yml -f docker-compose.azure.yml up --build
-```
+<div align="left" style="margin: 20px; font-size: 16px;">
 
-### Stop containers
-```bash
-docker compose down          # stop containers
-docker compose down -v       # stop + remove volumes (wipes DB)
-```
+<p><strong>Trainer Name:</strong> Gaurav Patel</p>
+<p><strong>Trainer Email ID:</strong> Gaurav.patel.gpp@gmail.com</p>
+<p><strong>Trainer Designation:</strong> Data Scientist</p>
+
+</div>
+
+</div>
+
+<hr style="border: 0; border-top: 1px solid #ccc; width: 80%;" />
+
+## **Table of Contents**
+
+* [Overall Learning](#overall-learning)
+* [Projects Completed](#projects-completed)
+* [Project Introduction](#project-introduction)
+* [Technologies Used](#technologies-used)
+* [Roles and Responsibilities](#roles-and-responsibilities)
+* [Project Report](#project-report)
+* [References](#references)
+* [Learnings from LST and SST](#learnings-from-lst-and-sst)
+* [Community Services](#community-services)
+* [Certificate](#certificate)
+* [Acknowledgments](#acknowledgments)
+
+<hr style="border: 0; border-top: 1px solid #ccc; width: 80%;" />
+
+## **Overall Learning**
+
+During my six-month AI/ML training at SURE Trust, I developed a strong foundation in Artificial Intelligence and Machine Learning. I gained hands-on experience with Python, NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow, and Keras, along with practical knowledge of data preprocessing, exploratory data analysis, model building, evaluation, and visualization.
+
+Through projects and assignments, I strengthened my problem-solving, analytical thinking, teamwork, documentation, and ability to apply AI/ML concepts to real-world problems. The training also helped me improve my understanding of the complete machine learning workflow, from data collection and preprocessing to model development and deployment.
 
 ---
 
-## 💻 Option 2 — Run without Docker (VS Code)
+<h2 style="color:#333;">Projects Completed</h2>
 
-### Step 1 — Open in VS Code
+<div align="left" style="margin: 20px; font-size: 16px;">
 
-```bash
-code securemeet
-```
+<p>
+<strong><a href="#project1">Project 1:</a></strong> SecureMeet
+</p>
 
-Install recommended extensions when prompted (or press `Ctrl+Shift+P` → "Show Recommended Extensions").
-
-### Step 2 — Backend Setup
-
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-
-# Activate — Mac/Linux:
-source venv/bin/activate
-# Activate — Windows:
-venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Download NLTK data
-python -c "import nltk; nltk.download('stopwords'); nltk.download('wordnet'); nltk.download('punkt')"
-
-# Train ML model
-python ml/train_model.py
-
-# Copy and edit env file
-cp .env.example .env
-# Edit .env with your MySQL credentials
-```
-
-### Step 3 — Start Backend
-
-**Option A: VS Code Tasks** (`Ctrl+Shift+B` → "Run Flask Backend")
-
-**Option B: Terminal**
-```bash
-cd backend && python app.py
-# API at http://localhost:5000
-```
-
-**Option C: VS Code Debug** (F5 → select "Flask Backend")
-
-### Step 4 — Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm start
-# App at http://localhost:4200
-```
-
-**VS Code Task:** `Ctrl+Shift+B` → "Run Angular Frontend"
-
-### Step 5 — MySQL
-
-**Local MySQL:**
-```bash
-# Mac (Homebrew)
-brew services start mysql
-
-# Windows
-net start MySQL
-
-# Linux
-sudo systemctl start mysql
-```
-
-Create database:
-```sql
-CREATE DATABASE securemeet CHARACTER SET utf8mb4;
-CREATE USER 'securemeet_user'@'localhost' IDENTIFIED BY 'SecureMeet@2025!';
-GRANT ALL ON securemeet.* TO 'securemeet_user'@'localhost';
-```
-
-Tables are created **automatically** by SQLAlchemy on first backend start.
+</div>
 
 ---
 
-## ☁️ Option 3 — Azure MySQL Setup
+## **Project Introduction**
 
-### Create Azure MySQL Flexible Server
+### **Project 1: SecureMeet**
 
-1. Go to [portal.azure.com](https://portal.azure.com)
-2. Search **"Azure Database for MySQL"** → **Create** → **Flexible Server**
-3. Fill in:
-   - Server name: `securemeet-db`
-   - Region: nearest to you
-   - Admin username: `securemeet_admin`
-   - Password: `YourStrongPassword123!`
-4. Under **Networking**: Allow public access, add your IP
-5. Click **Review + Create**
+<p>
+Our project is SecureMeet, an AI-powered meeting moderation system. The main purpose of SecureMeet is to automatically detect toxic, abusive, hateful and spam messages during online meetings and take appropriate moderation actions.
+</p>
 
-### Get Connection Details
-```
-Host:     securemeet-db.mysql.database.azure.com
-Port:     3306
-User:     securemeet_admin
-Password: YourStrongPassword123!
-Database: securemeet
-```
+<p>
+SecureMeet uses Natural Language Processing and Machine Learning techniques to analyze user messages and identify potentially harmful or inappropriate content.
+</p>
 
-### Download Azure SSL Certificate
-```bash
-# Download DigiCert root CA (required for Azure MySQL SSL)
-curl -o backend/ssl/DigiCertGlobalRootCA.crt.pem \
-  https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
-```
+<div align="center">
 
-### Update .env for Azure
-```env
-MYSQL_HOST=securemeet-db.mysql.database.azure.com
-MYSQL_PORT=3306
-MYSQL_USER=securemeet_admin
-MYSQL_PASSWORD=YourStrongPassword123!
-MYSQL_DATABASE=securemeet
-USE_SSL=1
-```
+<img
+ src="YOUR_SECUREMEET_IMAGE_URL_1"
+ alt="SecureMeet Project Screenshot 1"
+ width="45%"
+ style="border-radius: 10px;"
+/>
+
+<img
+ src="YOUR_SECUREMEET_IMAGE_URL_2"
+ alt="SecureMeet Project Screenshot 2"
+ width="45%"
+ style="border-radius: 10px;"
+/>
+
+</div>
+
+<br>
+
+<p align="center">
+<a href="https://github.com/sure-trust/SIMRAN-KAUR-g37-ai-ml/blob/62df189e127ea45497e4aa30f68a115f65b63637/Course%20report/SURE%20Trust%20project%20document.pdf" target="_blank">
+<strong>→ View Full Project Report</strong>
+</a>
+</p>
 
 ---
 
-## 🍎 Mac M1/M2/M3 Specific Notes
+## **Technologies Used**
 
-```bash
-# If you get architecture errors with Docker:
-docker compose build --platform linux/amd64
+The major technologies and tools used during the training and project development include:
 
-# If MySQL container crashes on Apple Silicon, use:
-# platform: linux/amd64  (already set in docker-compose.yml)
-
-# For native Python (without Docker), install via Homebrew:
-brew install python@3.11 mysql-client pkg-config
-export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
-pip install pymysql cryptography
-
-# Node.js via nvm (recommended on Mac):
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-nvm install 20
-nvm use 20
-```
+* **Python**
+* **NumPy**
+* **Pandas**
+* **Matplotlib**
+* **Scikit-learn**
+* **TensorFlow**
+* **Keras**
+* **Natural Language Processing (NLP)**
+* **NLTK**
+* **Machine Learning**
+* **Deep Learning**
+* **Git and GitHub**
+* **Jupyter Notebook / Google Colab**
 
 ---
 
-## 🧪 Testing the API
+## **Roles and Responsibilities**
 
-Open `api-tests.http` in VS Code with the **REST Client** extension installed.
+During the SecureMeet project, my responsibilities included:
 
-1. Run the **Register** request
-2. Copy the `token` from the response
-3. Paste it at the top: `@token = your_token_here`
-4. Run any other request
-
----
-
-## 🗂️ Environment Variables Reference
-
-| Variable         | Description                        | Default              |
-|------------------|------------------------------------|----------------------|
-| `MYSQL_HOST`     | MySQL server hostname              | `mysql` (docker)     |
-| `MYSQL_PORT`     | MySQL port                         | `3306`               |
-| `MYSQL_USER`     | MySQL username                     | `securemeet_user`    |
-| `MYSQL_PASSWORD` | MySQL password                     | `SecureMeet@2025!`   |
-| `MYSQL_DATABASE` | Database name                      | `securemeet`         |
-| `USE_SSL`        | Enable SSL for Azure MySQL         | `0` (local), `1` (Azure) |
-| `JWT_SECRET_KEY` | JWT signing secret                 | change in production |
-| `FLASK_ENV`      | Flask environment                  | `development`        |
-| `FLASK_DEBUG`    | Enable debug mode                  | `1`                  |
+* Understanding the project requirements and objectives.
+* Collecting and preprocessing textual data.
+* Performing exploratory data analysis.
+* Applying Natural Language Processing techniques.
+* Using NLTK for text preprocessing.
+* Converting text into numerical features using techniques such as TF-IDF.
+* Training and evaluating machine learning models.
+* Analysing model performance using suitable evaluation metrics.
+* Contributing to project documentation and presentation.
+* Collaborating with team members throughout the project.
 
 ---
 
-## ✅ Quick Start Checklist
+## **Project Report**
 
-- [ ] Docker Desktop installed and running
-- [ ] `docker compose up --build` starts all 3 services
-- [ ] Frontend loads at http://localhost:4200
-- [ ] Register a new account (choose Admin role)
-- [ ] Create a meeting from Dashboard
-- [ ] Enter meeting room and type a toxic message
-- [ ] See real-time moderation alert appear
-- [ ] Visit /admin to see flagged message in table
+The complete project report can be accessed using the link below:
+
+<p align="center">
+
+<a href="https://github.com/sure-trust/SIMRAN-KAUR-g37-ai-ml/blob/62df189e127ea45497e4aa30f68a115f65b63637/Course%20report/SURE%20Trust%20project%20document.pdf" target="_blank">
+
+<strong>📄 View SecureMeet Project Report</strong>
+
+</a>
+
+</p>
 
 ---
 
-## 📝 Resume Description
+## **References**
 
-> Developed **SecureMeet**, an AI-powered meeting moderation platform using **Angular 17**, **Flask**, **Azure MySQL**, and **Docker**. Implemented NLP toxicity detection (TF-IDF + Logistic Regression) achieving 96%+ accuracy. Built JWT-authenticated REST APIs, containerized with Docker Compose, and configured for Azure MySQL Flexible Server deployment.
+* [Wikipedia](https://wikipedia.com)
+* [Kaggle – Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge)
+
+---
+
+## **Learnings from LST and SST**
+
+My six-month AI/ML training at SURE Trust was a valuable and practical learning experience. I gained hands-on knowledge of Python, data analysis, machine learning, deep learning, and model evaluation.
+
+Working on different projects and datasets helped me understand how to preprocess data, build and train models, analyze results, and solve real-world problems.
+
+The training also improved my problem-solving, teamwork, communication, and documentation skills, and gave me greater confidence in applying AI/ML concepts in practical projects.
+
+---
+
+## **Community Services**
+
+I participated in community service activities focused on helping elderly people and supporting environmental conservation.
+
+I spent time assisting and interacting with elderly people, helping them with their daily needs and providing companionship.
+
+I also participated in tree plantation activities to contribute towards a greener and healthier environment.
+
+These experiences taught me the importance of kindness, social responsibility, teamwork, and caring for our community.
+
+### **Activities Involved**
+
+* **Tree Plantation Drive** – Participated in planting trees and contributing towards environmental improvement.
+
+* **Helping Elder Citizens** – Assisted two elderly individuals with simple daily tasks and provided support where needed.
+
+### **Impact / Contribution**
+
+* Actively participated in promoting a greener and cleaner environment.
+* Contributed towards environmental conservation through tree plantation.
+* Offered personal assistance and support to elderly citizens.
+* Strengthened communication, coordination, and teamwork skills.
+* Developed a greater sense of social responsibility and community service.
+
+### **Photos**
+
+<div align="center">
+
+<img
+ src="https://github.com/sure-trust/SIMRAN-KAUR-g37-ai-ml/blob/main/Final%20capstone%20project/Community%20Services/Tree%20Plantation.jpg?raw=true"
+ alt="Tree Plantation Activity"
+ width="45%"
+ style="border-radius: 10px;"
+/>
+
+<img
+ src="https://github.com/sure-trust/SIMRAN-KAUR-g37-ai-ml/blob/main/Final%20capstone%20project/Community%20Services/serving%20old%20age%20citizens.jpg?raw=true"
+ alt="Helping Elder Citizens"
+ width="45%"
+ style="border-radius: 10px;"
+/>
+
+</div>
+
+---
+
+## **Certificate**
+
+The internship certificate serves as an official acknowledgment of the successful completion of my training period. It validates the skills, experience, and contributions made during the internship.
+
+<p align="center">
+
+<img
+ src="https://github.com/Lord-Rahul/Practice-Programs/blob/main/react/1/public/Gemini_Generated_Image_a6w8rda6w8rda6w8.png?raw=true"
+ alt="Internship Certificate"
+ width="80%"
+/>
+
+</p>
+
+---
+
+## **Acknowledgments**
+
+I would like to sincerely thank **Prof. Radhakumari Challa**, Executive Director and Founder of SURE Trust, for providing this valuable learning opportunity.
+
+I am also grateful to **Gaurav Patel**, Data Scientist and trainer, for his guidance, support, and valuable knowledge throughout the six-month AI/ML training program.
+
+* [Prof. Radhakumari Challa](https://www.linkedin.com/in/prof-radhakumari-challa-a3850219b) – Executive Director and Founder, [SURE Trust](https://www.suretrustforruralyouth.com/)
+* **Gaurav Patel** – Data Scientist and AI/ML Trainer
+
+---
+
+<p align="center">
+
+<strong>Thank You!</strong>
+
+</p>
